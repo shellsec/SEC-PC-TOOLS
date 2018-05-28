@@ -1,0 +1,12 @@
+IBM AppScan该产品是一个领先的 Web 应用安全测试工具，曾以 Watchfire AppScan 的名称享誉业界。Rational AppScan 可自动化 Web 应用的安全漏洞评估工作，能扫描和检测所有常见的 Web 应用安全漏洞，例如 SQL 注入（SQL-injection）、跨站点脚本攻击（cross-site scripting）、缓冲区溢出（buffer overflow）及最新的 Flash/Flex 应用及 Web 2.0 应用曝露等方面安全漏洞的扫描。
+个人认为appscan扫描太慢，不如WVS好用，但是WVS始终没有V11破解版，只能配合appscan使用了，坛友有没有什么好的扫描工具望能推荐。
+将破解补丁替换“..\..\IBM\AppScan Standard”安装目录下同名文件，替换后运行软件还显示演示许可证，但是扫描目标已不受限制。
+
+
+
+9.0.3.5版本
+链接：http://pan.baidu.com/s/1pLqFThh 密码：jsj3
+
+9.0.3.2版本
+
+链接: https://pan.baidu.com/s/1i5bZdgL 密码: 4wj3

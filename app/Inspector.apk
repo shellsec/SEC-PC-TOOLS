@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>QQ电脑管家提醒您</title>
+		<meta name="keywords" content="恶意网址" />
+		<meta name="description" content="恶意网址提醒" />
+		<meta name="author" content="ChappellQu" />
+		<meta name="build" content="2007" />
+		<link id="favicon" rel="shortcut icon" type="image/x-icon" href="http://pc1.gtimg.com/favicon.ico" />
+		<script type="text/javascript">
+
+		 	document.domain = 'pc.qq.com';
+
+		    function getCookie(name)       
+			{
+			    var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
+			     if(arr != null) return unescape(arr[2]); return null;
+
+			}
+
+		    function have_token(){ 
+				var f = 'discuz';
+				var token = getCookie(f);
+				return  !!token;
+			}
+
+			function del_token()
+			{
+				document.cookie= "discuz=;domain=pc.qq.com;path=/;expires=1";
+			}
+
+			function getParam(param) {
+			    var r = new RegExp("\\?(?:.+&)?" + param + "=(.*?)(?:&.*)?$");
+			    var m = window.location.toString().match(r);
+			    return m ? m[1] : ""; 
+			}
+
+		</script>
+	</head>
+	<body>
+		<noscript>
+			<p class="noscript">温馨提示：你的浏览器已经禁用了JavaScript！需要运行javasrcipt才可以正常浏览。</p>
+		</noscript>
+        <script type="text/javascript">
+        	(function(c, u) {
+				var k = !+"\v1";
+				var e = function() {
+						return false;
+					};
+				var g = 0,
+					l = "QQ电脑管家";
+				if(null !== (g = /[?|&]pagetype=(\d+)/i.exec(u.URL))) {
+					g = +g[1];
+					if(!isNaN(g) && 0 < g) {
+						var a = [{
+							c: "qq_browser",
+							n: "QQ浏览器",
+							i: "http://pc1.gtimg.com/qqbrowser/favicon.ico"
+						}];
+						if(a.length >= g) {
+							var q = a[g - 1];
+							u.getElementById("favicon").href = q.i;
+							u.title = q.n + "提醒您";
+							l = q.n
+						}
+					}
+				} else {
+					g = 0
+				}
+				var t, b = "#";
+				if(null !== (t = /[?|&]url=([^&]*)/i.exec(u.URL)) && (t = decodeURIComponent(t[1]).replace(/^[\s\t ]+/g, ""))) {
+					s = t.replace(/\?.*$/, '');
+					var test=/^([^:]+):\/\//.exec(s);
+					if(null===test){
+						s='http://'+s;
+					}
+					var p = /^([^:]+):\/\/(?:([^:@]+):?([^@]*)@)?(?:([^/?#:]+):?(\d*))([^?#]*)(?:\?([^#]+))?(?:#(.+))?$/.exec(s);
+					if(null === p || (!(p[1].toLowerCase() == "http" || p[1].toLowerCase() == "https"))) {
+						return e();
+					} else {
+						var m = p[4];
+						if(-1 !== m.indexOf(".")) {
+							m = "." + m.replace("|", "").toLowerCase() + "|";
+							var h = ["qq.com", "qq.com.cn", "paipai.com", "soso.com", "taotao.com", "tenpay.com", "tencent.com", "tencent.cn", "tencent.com.cn", "tencent.com.hk", "gtimg.cn", "3366.com", "qzone.com", "imqq.com", "qzoneapp.com", "elong.com", "goldenholiday.com", "pengyou.com"];
+							for(var o = 0, n = h.length; o < n; o++) {
+								if(-1 !== m.indexOf("." + h[o] + "|")) {
+									return e()
+								}
+							}
+						}
+					}
+					p = m = h = null;
+					b = t;
+					t = b.replace(/[?|&]qqdrsign=(?:[^&]*)/i, "")
+				} else {
+					return e()
+				}
+				
+				var test=/^([^:]+):\/\//.exec(b);
+				if(null===test && "string" === typeof b ){
+						b='http://'+b;
+				}
+				b = "string" === typeof b ? encodeURIComponent(b) : "";
+				t = "string" === typeof t ? encodeURIComponent(t) : "";
+				var d = null,
+					s = "";
+				if(null !== (d = /[?|&]eviltype=(0x[0-9A-F]+)/i.exec(u.URL))) {
+					d = d[1];
+					if(!isNaN(d) && 0 < d) {} else {
+						return e()
+					}
+				}
+				if(null !== (t = /[?|&]showtrust=([01]{1})/i.exec(u.URL))) {
+					t = t[1];
+					if(isNaN(t)) {
+						t = 0;
+					}
+				}
+				if(t != 1) {
+					t = 0
+				}
+				if(null !== (i = /[?|&]ins=([01]{1})/i.exec(u.URL))) {
+					i = i[1];
+					if(isNaN(i)) {
+						i = 0;
+					}
+				}
+				if(i != 1) {
+					i = 0
+				}
+				var r = "http://c.pc.qq.com/fcgi-bin/safeurl?url=" + b + "&pagetype=" + g + "&eviltype=" + d + "&ins=" + i + "&showtrust=" + t + "&bid=" + getParam('bid') + "&ticket=" + getParam('ticket') + "&version=" + getParam('version') + "&worktype=" + getParam('worktype') + "&jsver=" + getParam('jsver') +"&showinsxrun=" + getParam('showinsxrun')+"&mgrtoken=" + getParam('mgrtoken');
+				
+				if(have_token()) {
+					del_token();
+					location.replace(unescape(b));
+				} else {
+					location.replace(r);
+				}
+			})(window, document);
+        </script>
+	</body>
+</html>
